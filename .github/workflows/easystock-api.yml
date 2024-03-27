@@ -36,7 +36,7 @@ jobs:
     - name: Lint with pylint
       run: |
         # stop the build if there are Python syntax errors or undefined names
-        pylint src/ --errors-only --disable=all --enable=E,W,F --max-complexity=10 --exit-zero
+        pylint src/ --errors-only --disable=all --enable=E,W,F --exit-zero
         # stop the build if there are Python syntax errors or undefined names
         pylint src/ --exit-zero --max-line-length=127 --max-complexity=10
     - name: Test with pytest
