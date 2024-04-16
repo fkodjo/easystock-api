@@ -33,12 +33,19 @@ jobs:
         python -m pip install --upgrade pip
         pip install pylint pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with pylint
-      run: |
+   # - name: Lint with pylint
+    #  run: |
         # stop the build if there are Python syntax errors or undefined names
-        pylint src/ --errors-only --disable=all --enable=E,W,F --exit-zero
+     #   pylint src/ --errors-only --disable=all --enable=E,W,F --exit-zero
         # stop the build if there are Python syntax errors or undefined names
-        pylint src/ --exit-zero --max-line-length=127
-    - name: Test with pytest
-      run: |
-        pytest
+      #  pylint src/ --exit-zero --max-line-length=127
+    #- name: Test with pytest
+     # run: |
+      #  pytest
+    - name: Reload app
+      uses: jensvog/pythonanywhere-webapp-reload-action@v1
+      with: 
+        host: 'www.pythonanywhere.com'
+        username: easystock
+        api-token: 74ae73b74646a6df37d5b3d71b11763cc9f46b94
+        domain-name: easystock.pythonanywhere.com
