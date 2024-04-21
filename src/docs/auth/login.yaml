@@ -1,0 +1,32 @@
+User log in
+---
+
+tags:
+  - Authentication
+parameters:
+  - name: boby
+    description: The boby should contain the user login credentials
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "phone number"
+        - "password"
+    properties:
+      phone:
+        type: "phone"
+        example: "99 99 99 99"
+      password:
+        type: "string"
+        format: password
+        example: "********"
+response:
+  200:
+    description: When a user successfully logs in
+
+  400:
+    description: Fails to login due bad request data
+  
+  401:
+    description: A user supplies incorrect credentials
