@@ -47,5 +47,5 @@ jobs:
       with: 
         host: 'www.pythonanywhere.com'
         username: easystock
-        api-token: 74ae73b74646a6df37d5b3d71b11763cc9f46b94
+        api-token: ${{secrets.EASYSTOCK_TOKEN}}
         domain-name: easystock.pythonanywhere.com
